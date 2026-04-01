@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>痣福緣 - 專業祛痣祛斑美肌專家</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+  scroll-behavior:smooth;
+}
+body{
+  background:#111111;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* 跑馬燈 */
+.marquee{
+  background:#d4af37;
+  color:#000;
+  padding:8px 0;
+  font-weight:bold;
+  white-space:nowrap;
+  overflow:hidden;
+}
+.marquee-content{
+  display:inline-block;
+  animation:marquee 24s linear infinite;
+  padding-left:100%;
+}
+@keyframes marquee{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-100%)}
+}
+
+/* 頂部 */
+header{
+  background:#1a1a1a;
+  padding:22px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:999;
+  border-bottom:2px solid #d4af37;
+}
+header h1{
+  font-size:34px;
+  color:#d4af37;
+}
+header p{
+  color:#ccc;
+  margin-top:6px;
+}
+
+/* 金色海浪背景圖（穩定版） */
+.banner{
+  width:100%;
+  height:90vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  background:url(https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg) center center / cover no-repeat;
+}
+.banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+}
+.banner .content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
+  padding:20px;
+  animation:fadeUp 1.2s ease-out;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.banner h1{
+  font-size:46px;
+  margin-bottom:16px;
+  color:#d4af37;
+}
+.banner p{
+  font-size:22px;
+  margin-bottom:32px;
+  color:#eee;
+}
+.btn{
+  display:inline-block;
+  padding:16px 42px;
+  background:linear-gradient(to right,#d4af37,#ffd700);
+  color:#111;
+  font-weight:bold;
+  text-decoration:none;
+  border-radius:50px;
+  font-size:18px;
+  transition:0.3s;
+}
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px rgba(212,175,55,0.4);
+}
+
+/* 版面 */
+.section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+.section h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+  color:#d4af37;
+}
+.section h2::after{
+  content:"";
+  width:80px;
+  height:3px;
+  background:#d4af37;
+  display:block;
+  margin:12px auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.card{
+  background:#1a1a1a;
+  border:1px solid #333;
+  border-radius:16px;
+  padding:32px;
+  transition:0.4s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:#d4af37;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+.card h3{
+  color:#d4af37;
+  font-size:22px;
+  margin-bottom:12px;
+}
+.card p{
+  color:#ccc;
+  line-height:1.7;
+}
+
+/* 地圖 */
+.map-box{
+  width:100%;
+  height:420px;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #d4af37;
+}
+.map-box iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+/* 聯絡資料 */
+.contact-info{
+  text-align:center;
+  font-size:20px;
+  line-height:2;
+  color:#fff;
+  margin-bottom:30px;
+}
+.contact-info strong{
+  color:#d4af37;
+}
+
+/* 表單 */
+.form-box{
+  max-width:600px;
+  margin:40px auto;
+  background:#1a1a1a;
+  padding:40px;
+  border-radius:16px;
+  border:1px solid #d4af37;
+}
+.form-box input,.form-box textarea{
+  width:100%;
+  padding:15px;
+  margin-bottom:18px;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#222;
+  color:#fff;
+  font-size:16px;
+}
+.form-box button{
+  width:100%;
+  padding:17px;
+  background:linear-gradient(to right,#d4af37,#ffd700);
+  color:#111;
+  font-weight:bold;
+  border:none;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.form-box button:hover{opacity:0.9;}
+
+/* WhatsApp浮動按鈕 */
+.whatsapp-float{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  width:65px;
+  height:65px;
+  background:#25d366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  z-index:9999;
+  transition:0.3s;
+}
+.whatsapp-float:hover{transform:scale(1.1);}
+.whatsapp-float img{
+  width:36px;
+  height:36px;
+}
+
+footer{
+  background:#000;
+  text-align:center;
+  padding:28px;
+  color:#888;
+  font-size:15px;
+  border-top:1px solid #222;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 跑馬燈 -->
+<div class="marquee">
+  <div class="marquee-content">
+    痣福緣｜專業祛痣、祛斑、祛疣、痘疤修復｜九龍城獅子石道17號地下｜營業時間 10:00-21:00｜預約熱線：95190171｜溫和技術、不易留疤、信心保證！
+  </div>
+</div>
+
+<header>
+  <h1>痣福緣</h1>
+  <p>專業祛痣 ‧ 祛斑 ‧ 祛疣 ‧ 肌膚修護專家</p>
+</header>
+
+<!-- 金色海浪背景圖 -->
+<section class="banner">
+  <div class="content">
+    <h1>告別痣斑煩惱，重拾淨白美肌</h1>
+    <p>專業技術 · 安全溫和 · 不易留疤 · 信心保證</p>
+    <a href="#form" class="btn">立即預約</a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>服務項目</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>專業祛痣</h3>
+      <p>針對黑痣、肉痣、頑固痣深層清除，技術成熟，不易復發，自然美觀。</p>
+    </div>
+    <div class="card">
+      <h3>深層祛斑</h3>
+      <p>改善雀斑、曬斑、老人斑、荷爾蒙斑，提亮膚色，重回透亮淨白。</p>
+    </div>
+    <div class="card">
+      <h3>祛疣修護</h3>
+      <p>安全去除扁平疣、絲狀疣、肉芽，溫和不破壞肌膚，修復快速。</p>
+    </div>
+    <div class="card">
+      <h3>痘疤修復</h3>
+      <p>修護痘印、凹洞、粗糙膚質，讓肌膚恢復平滑細緻有光澤。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>品牌優勢</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>專業資深團隊</h3>
+      <p>多年實戰經驗，技術穩定成熟，全程專業細心操作。</p>
+    </div>
+    <div class="card">
+      <h3>溫和不易留疤</h3>
+      <p>不破壞真皮層，修復期短，術後正常生活，不影響外觀。</p>
+    </div>
+    <div class="card">
+      <h3>實體門市信心</h3>
+      <p>九龍城實體店，可到店諮詢，術後跟進，安心有保障。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>門市資訊</h2>
+  <div class="contact-info">
+    <p><strong>地址：</strong>九龍城獅子石道17號地下</p>
+    <p><strong>電話：</strong>95190171</p>
+    <p><strong>營業時間：</strong>10:00 – 21:00</p>
+    <p>歡迎致電或WhatsApp預約免費專業諮詢</p>
+  </div>
+
+  <div class="map-box">
+    <iframe src="https://www.google.com/maps?q=九龍城獅子石道17號&output=embed&hl=zh-TW"></iframe>
+  </div>
+</section>
+
+<section class="section" id="form">
+  <h2>立即預約諮詢</h2>
+  <div class="form-box">
+    <input type="text" placeholder="你的姓名" required>
+    <input type="tel" placeholder="聯絡電話" required>
+    <input type="text" placeholder="查詢項目">
+    <textarea rows="5" placeholder="簡單說明你的需求"></textarea>
+    <button>提交預約</button>
+  </div>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/85295190171" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/124/124036.png" alt="WhatsApp">
+</a>
+
+<footer>
+  &copy; 2025 痣福緣 版權所有
+</footer>
+
+</body>
+</html>
